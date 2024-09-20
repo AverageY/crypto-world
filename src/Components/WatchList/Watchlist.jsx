@@ -18,7 +18,7 @@ const Watchlist = () => {
       console.log(user.email);
       try {
         const token = await getAccessTokenSilently();
-        const response = await axios.get(`http://localhost:5001/api/watchlist/${user.email}`, {
+        const response = await axios.get(`https://crypto-world-backend.onrender.com/api/watchlist/${user.email}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

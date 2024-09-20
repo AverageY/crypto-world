@@ -21,7 +21,7 @@ const Sidebar = () => {
   const addToWatchlist = async (crypto) => {
     try {
       // Post the crypto name to the backend
-      await axios.post('http://localhost:5001/api/watchlist/add', { name: crypto.name });
+      await axios.post('https://crypto-world-backend.onrender.com/api/watchlist/add', { name: crypto.name });
       
       // Update the frontend watchlist
       setWatchlist((prevWatchlist) => {
@@ -50,7 +50,7 @@ const Sidebar = () => {
           console.log('Access Token:', token);
   
           // Send the user data to the backend
-          await axios.post('http://localhost:5001/auth/save-user', {
+          await axios.post('https://crypto-world-backend.onrender.com/auth/save-user', {
             user,
           }, {
             headers: {
@@ -87,7 +87,7 @@ const Sidebar = () => {
         <div>
           {/* Logo */}
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-gray-100 mb-4">Crypto</h1>
+            <h1 className="text-4xl font-bold text-gray-100 mb-4">Crypto World</h1>
           </div>
           {/* Tabs */}
           <ul className="flex flex-col space-y-4">

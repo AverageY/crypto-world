@@ -52,7 +52,7 @@ const CryptoCurrencyList = () => {
     if (isInWatchlist(crypto)) {
       try {
         const token = await getAccessTokenSilently();
-        await axios.delete('http://localhost:5001/api/watchlist/remove', {
+        await axios.delete('https://crypto-world-backend.onrender.com/api/watchlist/remove', {
           data: { cryptoName: crypto.name, userId: user.sub },
           headers: {
             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ const CryptoCurrencyList = () => {
     } else {
       try {
         const token = await getAccessTokenSilently();
-        await axios.post('http://localhost:5001/api/watchlist/add', 
+        await axios.post('https://crypto-world-backend.onrender.com/api/watchlist/add', 
           { cryptoName: crypto.name, userId: user.sub }, 
           {
             headers: {
